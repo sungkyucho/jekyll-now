@@ -3,10 +3,14 @@ layout: post
 title: PWNABLE KR - TODDLER - blackjack - 1pt
 ---
 
+## 2017.7.25.
+## Sungkyu Cho - sungkyu1.cho@gmail.com
+
+PWNABLE KR - TODDLER - blackjack - 1pt
 
 보통은 flag를 읽도록 시스템 구성을 우회하는 문제를 봐왔는데, 이번에는 그냥 nc로 서버에 접속해보라고하는 게 전부였음
 
-![fig1]({{ site.baseurl }}/pwnablekr/blackjack/_fig/1.png)
+![fig1](./_fig/1.png)
 
 분명히 1pt이기 때문에 쉬운 문제일 거 같긴한데 ~~나한테는 어려워도~~ 사실 처음에 어떻게 접근해야 하나 많이 난감했음. ~~늘 그랬나..~~
 
