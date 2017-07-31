@@ -12,7 +12,7 @@ title: PWNABLE KR - TODDLER - cmd1 - 1pt
 
   그래서 우선은 기본적으로 설정된 PATH 값을 가져오고...
 
-  ![fig1]({{site.baseurl}}/images/pwnablekr/cmd1/fig/1.png)
+  ![fig1]({{ site.baseurl }}/images/pwnablekr/cmd1/fig/1.png)
 
   이제 이걸 어떻게 실행하나 곰곰히 생각해 보다가 문득 생각난 것이 ```exec()```와 ```execve()``` 라서 구글에 검색해보니 첫 페이지가 이거
 
@@ -32,4 +32,4 @@ title: PWNABLE KR - TODDLER - cmd1 - 1pt
   * ```;``` 로 command injection을 수행하여 exec로 찍어주면 됨 (이 때, 필터링 문구는 쓰이지 않도록..)
   * 몇 차례의 튜닝을 거쳐 아래와 같이 성공. (명령어가 익숙치 않아서..)
 
-  ![fig2]({{site.baseurl}}/images/pwnablekr/cmd1/fig/2.png)
+  ![fig2]({{ site.baseurl }}/images/pwnablekr/cmd1/fig/2.png)
