@@ -5,7 +5,7 @@ title: PWNABLE KR - TODDLER - blackjack - 1pt
 
 보통은 flag를 읽도록 시스템 구성을 우회하는 문제를 봐왔는데, 이번에는 그냥 nc로 서버에 접속해보라고하는 게 전부였음
 
-![fig1]({{ site.baseurl }}/images/pwnablekr/blackjack/_fig/1.png)
+![fig1]({{ site.baseurl }}/images/pwnablekr/blackjack/fig/1.png)
 
 분명히 1pt이기 때문에 쉬운 문제일 거 같긴한데 ~~나한테는 어려워도~~ 사실 처음에 어떻게 접근해야 하나 많이 난감했음. ~~늘 그랬나..~~
 
@@ -24,7 +24,7 @@ title: PWNABLE KR - TODDLER - blackjack - 1pt
   * ```-o``` 옵션으로 주고받는 패킷도 살펴보고 ~~혹시 숨겨진 게 있을까~~ ```-l``` 로 [리버스 쉘](http://kali-km.tistory.com/entry/Netcat-Reverse-Shell)을 걸어야 하나 ~~될 리가 없잖아~~ 이것저것 해봤지만 실패
   * 입력값도 잘 처리하는 거 같아서, 버퍼가 넘칠 부분이 잘 보이지를 않았는데..
 
-  ![fig2](./_fig/2.png)
+  ![fig2]{{ site.baseurl }}/images/pwnablekr/blackjack/fig/2.png)
 
   * 갑자기 성공하고 말았다 - _ -;;
 
@@ -83,6 +83,6 @@ title: PWNABLE KR - TODDLER - blackjack - 1pt
 # 2. Exploit
   * 걍 두 번째 입력받을 때 굉장히 큰 수를 집어넣으면 끝
   * 이러고 이기거나
-  ![fig3](./_fig/3.png)
+  ![fig3]{{ site.baseurl }}/images/pwnablekr/blackjack/fig/3.png)
   * 이러고 지거나
-  ![fig4](./_fig/4.png)
+  ![fig4]{{ site.baseurl }}/images/pwnablekr/blackjack/fig/4.png)
