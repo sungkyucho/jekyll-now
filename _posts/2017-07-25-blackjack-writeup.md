@@ -83,6 +83,6 @@ title: PWNABLE KR - TODDLER - blackjack - 1pt
 # 2. Exploit
   * 걍 두 번째 입력받을 때 굉장히 큰 수를 집어넣으면 끝
   * 이러고 이기거나
-![fig3]{{ site.baseurl }}/images/pwnablekr/blackjack/fig/3.png)
+![fig3]({{ site.baseurl }}/images/pwnablekr/blackjack/fig/3.png)
   * 이러고 지거나
-![fig4]{{ site.baseurl }}/images/pwnablekr/blackjack/fig/4.png)
+![fig4]({{ site.baseurl }}/images/pwnablekr/blackjack/fig/4.png)
