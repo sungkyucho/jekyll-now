@@ -3,7 +3,7 @@ layout: post
 title: Raspberry pi - TPM 연동해보기
 ---
 
-##1. TPM?
+## 1. TPM?
 [TPM(위키 백과사전 링크)](https://en.wikipedia.org/wiki/Trusted_Platform_Module)은 Trusted Platform Module의 약자로써, 어짜피 널리 알려진 HW 기반 보안모듈이기 때문에 별다른 설명은 생략한다.
 
 이것을 Raspberry pi 에 연결해보려고 했던 이유는 사실, IoT 보안에 있어 HW 보안모듈이 굉장히 큰 트렌드가 되고 있기 때문..
@@ -16,7 +16,7 @@ TPM은 그에 반해 역사가 꽤 오랜 보안모듈이고, 리눅스나 윈�
 
 ![fig1]({{ site.baseurl }}/images/tech/tpm/1.png)
 
-##2. TPM 특징
+## 2. TPM 특징
 
 TPM과 관련된 자료는 구글에서 쉽게 찾을 수 있으므로 이 부분은 SKIP 하고.. 내가 생각하는 TPM의 특징은 아래와 같음
 
@@ -33,7 +33,7 @@ TPM과 관련된 자료는 구글에서 쉽게 찾을 수 있으므로 이 부�
 
  하지만 어쨌든. 오랜 시간을 걸쳐 windows bitLocker라든가 여기저기서 상용화가 되었던 기능이니만큼, 보안기능을 테스트해보고 활용해보기에는 또 이만한 게 없는 듯 하다.
 
-##3. 준비물
+## 3. 준비물
  - 라즈베리파이3 및 라즈비안 (Jessie lite version)
  - 리눅스 커널
    - 이게 상당히 어려운데 TPM interface 가 I2C 이므로 이 부분에 대해서 부트로더 쪽 작업이 필요하다.
@@ -46,18 +46,18 @@ TPM과 관련된 자료는 구글에서 쉽게 찾을 수 있으므로 이 부�
 
 ![fig2]({{ site.baseurl }}/images/tech/tpm/2.png)
 
-##4. TPM enabling
+## 4. TPM enabling
 
  - 결론적으로 가장 많은 삽질을 했던 곳은 7-inch 모니터로 구성을 해보려고 했는데, video driver하고 충돌이 있다고 한다.
  - 따라서, 모니터로 연결하지 말고 UART를 통해 serial port 로 디버깅 해야 함
 
-###1) UART Setup
+### 1) UART Setup
 ```
 /media/~/boot/config.txt
 enable_uart=1
 ```
 
-###2) WIFI Setup - [참조 링크](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
+### 2) WIFI Setup - [참조 링크](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 
 ```
 $ sudo cat /etc/wpa_supplicant/wpa_supplicant.conf
@@ -72,21 +72,21 @@ $ sudo cat /etc/wpa_supplicant/wpa_supplicant.conf
     }
 ```
 
-###3) TPM 관련 라이브러리/패키지 설치
+### 3) TPM 관련 라이브러리/패키지 설치
 
-####Install Trousers
+#### Install Trousers
 ```
     sudo apt-get update
     sudo apt-get install trousers libtspi1 libtspi-dev tpm-tools
 ```
 
-####TPM enabled kernel download
+#### TPM enabled kernel download
 ```
     (위의 바이너리 기준)
     tar jxf kernel_for_tpm.tar.bz2
 ```
 
-####Install Image
+#### Install Image
 ```
     sudo mv /boot/kernel7.img /boot/kernel7.img.raspbian
     tar c -O -C target . | sudo tar x -C /
@@ -137,7 +137,7 @@ Starting kernel ...
 
 이제부터 tpm_takeownership이든, setactive든 다양한 command를 활용해서 TPM을 enabling하면 된다.
 
-###4) TPM enabling commands
+### 4) TPM enabling commands
 
 순서가 틀리면..
 ```
@@ -154,7 +154,7 @@ Change to Physical Presence Failed
 
 등의 에러로 인해 엄청난 삽질을 하게 됨..
 
-####A. TPM Clear : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
+#### A. TPM Clear : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
 
 ```
     # service tcsd start
@@ -162,7 +162,7 @@ Change to Physical Presence Failed
     # halt
 ```
 
-####B. TPM Set Enable : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
+#### B. TPM Set Enable : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
 ```
     # service tcsd start
     # tpm_setenable -ef
@@ -170,7 +170,7 @@ Change to Physical Presence Failed
     # halt
 ```
 
-####C. TPM Take ownership : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
+#### C. TPM Take ownership : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
 
 ```
     # service tcsd start
@@ -185,7 +185,7 @@ Change to Physical Presence Failed
  - 이게 굉장히 시사하는 바가 큰데.. **결국 TPM 을 소유한 사람을 패스워드로 인증하겠다는 것**이며 HW security라고 한들 결국 **(시스템 내부로 한정지어서) crypto의 끝판은 access control이라는 아이러니한 결론**이 난다.
  - ```y``` 옵션을 빼면, 패스워드를 입력받게 되어 있는데 이를 어떻게 관리하느냐하는 또다른 보안관리 상의 문제가 도출된다..
 
-##5. TEST
+## 5. TEST
 
 ```
 pi@raspberrypi:~$ tpm_sealdata version
