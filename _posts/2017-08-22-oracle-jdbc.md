@@ -30,4 +30,147 @@ $ java JDBCInfo "jdbc:oracle:thin:<ID>/<PWD>@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP
 ![fig1]({{ site.baseurl }}/images/tech/elk/1.png)
 
 
-다음에는 Logstash 설정을 통해 oracle에 있는 data를 migration할 예정.. 당분간은 쉽게쉽게, but 기록해두기
+다음에는 Logstash 설정을 통해 oracle에 있는 data를 migration할 예정.. 당분간은 **쉽게쉽게, but 기록해두기**
+
++ 참고 - JDBC/Oracle test
+
+```java
+import java.io.File;
+
+import java.sql.*;
+import java.util.Locale;
+import java.util.StringTokenizer;
+
+import oracle.jdbc.pool.OracleDataSource;
+
+public class JDBCInfo {
+
+  public static void main (String[] args) {
+
+    String url      = null;
+    String type     = null;
+    String hostname = null;
+    String sid      = null;
+    String user     = null;
+    String password = null;
+
+    int    port     = 0;
+
+    boolean shortParameter = false;
+
+    if(args.length == 1) {
+      url      = args[0];
+      shortParameter = true;      
+    }
+
+    else if(args.length == 6) {
+      type     = args[0];
+      hostname = args[1];
+      port     = Integer.parseInt(args[2]);
+      sid      = args[3];
+      user     = args[4];
+      password = args[5];
+    }
+
+    else {
+      System.out.println("Usage: java JDBCInfo <type> <hostname> <port> <sid> <user> <password>");
+      System.out.println("OR ");
+      System.out.println("Usage: java JDBCInfo <url>");
+      System.exit(0);
+    }
+
+    try {
+      OracleDataSource ods = new OracleDataSource();
+
+      // Set properties for single URL.
+      if ( shortParameter ) {
+        ods.setURL(url);
+      }
+      // Set properties for parameters
+      else {
+        ods.setDriverType(type);
+        ods.setServerName(hostname);
+        ods.setPortNumber(port);
+        ods.setDatabaseName(sid);
+        ods.setUser(user);
+        ods.setPassword(password);
+      }
+
+      // Retrieve connection.
+      Connection conn = ods.getConnection();
+      DatabaseMetaData meta = conn.getMetaData ();
+
+      // gets driver info:
+      System.out.println("\nDatabase\n==============");
+      System.out.println(meta.getDatabaseProductVersion());
+      System.out.println("\nJDBC\n==============");
+      System.out.println(meta.getDriverName() + ": " + meta.getDriverVersion());
+      System.out.println("\nConnection URL\n==============");
+      System.out.println(meta.getURL());
+    } catch (Exception e) {
+      System.out.println("\nUsage: java JDBCInfo <type> <hostname> <port> <sid> <user> <password>");
+      System.out.println("OR ");
+      System.out.println("Usage: java JDBCInfo <url>");
+      System.out.println("\nError occured: ");
+      e.printStackTrace();
+    }
+
+    // Get JVM information.
+    java.util.Properties props = System.getProperties();
+    System.out.println("\nJVM\n===");
+    System.out.println(props.getProperty("java.vm.vendor"));
+    System.out.println(props.getProperty("java.vm.name"));
+    System.out.println(props.getProperty("java.vm.version"));
+    System.out.println(props.getProperty("java.version"));
+
+    // Get environment information.
+    System.out.println("\nLOCALE\n===========");
+    System.out.println(Locale.getDefault());
+
+    System.out.println( "\nBOOTSTRAP (sun.boot.class.path)\n==============================\n"
+                     + System.getProperty("sun.boot.class.path") );
+      System.out.println( "\nEXTENSION PACKAGES (java.ext.dirs)\n=================================\n"
+                     + System.getProperty("java.ext.dirs") + "\n" );
+      String [] dirs = new String [5];
+      int cnt = 0;
+      StringTokenizer st;
+      //  if windows parse with ; else parse with :
+      if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+           st=new StringTokenizer( System.getProperty("java.ext.dirs"), " ;");
+      else
+           st=new StringTokenizer( System.getProperty("java.ext.dirs"), " :");
+
+      int tokenCount=st.countTokens();
+          while (st.hasMoreTokens()) {
+              dirs[cnt]=st.nextToken();
+              System.out.println(dirs[cnt] + ": ");
+              File folder = new File(dirs[cnt]);
+              File[] listOfFiles = folder.listFiles();
+              if (listOfFiles != null)
+               for (int j = 0; j < listOfFiles.length; j++) System.out.println("      " + listOfFiles[j].getName());
+              cnt++;
+
+          }              
+
+
+    // Get CLASSPATH
+    String pathseparator = props.getProperty("path.separator");
+    String classpath = props.getProperty("java.class.path");
+    System.out.println("\nCLASSPATH\n=========");
+    String[] strarr = classpath.split(pathseparator);
+    for(int i = 0; i < strarr.length; i++)
+      System.out.println(strarr[i]);
+
+    // Get LIBRARY PATH     
+    String libpath = props.getProperty("java.library.path");
+    System.out.println("\nLIBRARYPATH\n===========");
+    strarr = libpath.split(pathseparator);
+    for(int i = 0; i < strarr.length; i++)
+      System.out.println(strarr[i]);
+
+  }//end of main
+
+}//end of JDBCInfo
+
+
+```

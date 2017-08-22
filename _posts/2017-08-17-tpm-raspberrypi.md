@@ -52,14 +52,14 @@ TPM과 관련된 자료는 구글에서 쉽게 찾을 수 있으므로 이 부�
  - 따라서, 모니터로 연결하지 말고 UART를 통해 serial port 로 디버깅 해야 함
 
 ### 1) UART Setup
-```
+```c 
 /media/~/boot/config.txt
 enable_uart=1
 ```
 
 ### 2) WIFI Setup - [참조 링크](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 
-```
+```c
 $ sudo cat /etc/wpa_supplicant/wpa_supplicant.conf
 
     country=Asia/Seoul
@@ -75,19 +75,19 @@ $ sudo cat /etc/wpa_supplicant/wpa_supplicant.conf
 ### 3) TPM 관련 라이브러리/패키지 설치
 
 #### Install Trousers
-```
+```c
     sudo apt-get update
     sudo apt-get install trousers libtspi1 libtspi-dev tpm-tools
 ```
 
 #### TPM enabled kernel download
-```
+```c
     (위의 바이너리 기준)
     tar jxf kernel_for_tpm.tar.bz2
 ```
 
 #### Install Image
-```
+```c
     sudo mv /boot/kernel7.img /boot/kernel7.img.raspbian
     tar c -O -C target . | sudo tar x -C /
 
@@ -99,7 +99,7 @@ $ sudo cat /etc/wpa_supplicant/wpa_supplicant.conf
 #### Single mode 변환
  여기까지가 준비단계이고, 이제부터 실제로 TPM 을 세팅해줘야 하는데 TPM 세팅은 run level이 single mode일 때만 가능하다. 따라서 아래와 같이 설정해준다.
 
-```
+```c
  vi /boot/extlinux/extlinux.conf
  "default FIT" -> "default FIT.single"
 ```
@@ -140,13 +140,13 @@ Starting kernel ...
 ### 4) TPM enabling commands
 
 순서가 틀리면..
-```
+```c
 root@raspberrypi:~# tpm_setenable -ef
 Tspi_TPM_SetStatus failed: 0x0000002d - layer=tpm, code=002d (45), Bad physical presence value
 ```
 ...
 
-```
+```c
 root@raspberrypi:~# tpm_setenable -efpresence -a
 Tspi_TPM_SetStatus failed: 0x00000003 - layer=tpm, code=0003 (3), Bad Parameter
 Change to Physical Presence Failed
@@ -156,14 +156,14 @@ Change to Physical Presence Failed
 
 #### A. TPM Clear : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
 
-```
+```c
     # service tcsd start
     # tpm_clear -f
     # halt
 ```
 
 #### B. TPM Set Enable : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
-```
+```c
     # service tcsd start
     # tpm_setenable -ef
     # tpm_setactive -a
@@ -172,7 +172,7 @@ Change to Physical Presence Failed
 
 #### C. TPM Take ownership : Reboot (Power off & on) - 전원케이블을 완전히 분리하여 Reboot
 
-```
+```c
     # service tcsd start
     # tpm_takeownership -yz
     # vi /boot/extlinux/extlinux.conf
