@@ -8,6 +8,8 @@ Study for security
 
 ### More Information
 
+I think now i'm too old to bet my life on security.
+But I always have and always will love the security.
 Love all kinds of security stuffs - system, mobile, embedded, cryptography, ...
 
 ### Contact me
