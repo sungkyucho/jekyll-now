@@ -8,7 +8,7 @@ Study for security
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Love all kinds of security stuffs - system, mobile, embedded, cryptography, ...
 
 ### Contact me
 
