@@ -15,7 +15,7 @@ Love all kinds of security stuffs - system, mobile, embedded, cryptography, ...
 [sungkyu1.cho@gmail.com](mailto:sungkyu1.cho@gmail.com)
 
 ### PGP Key block
-
+```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBFcUKJkBEAC3ZuZrYvcb9v9hJJRrXBY1naWmA5Yg3CHS42W/mDc7AvWydeQp
@@ -67,3 +67,4 @@ Pr5Q8w6JI2NSNf2AL37rYcZbUSSHb6kB0IWd29OGRqWYauCS686qX8ofVHlcXkwb
 yPYNv4qO0qRg4/2CwsdGlQ==
 =Boyt
 -----END PGP PUBLIC KEY BLOCK-----
+```
