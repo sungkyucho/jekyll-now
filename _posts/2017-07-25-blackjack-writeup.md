@@ -24,7 +24,7 @@ title: PWNABLE KR - TODDLER - blackjack - 1pt
   * ```-o``` 옵션으로 주고받는 패킷도 살펴보고 ~~혹시 숨겨진 게 있을까~~ ```-l``` 로 [리버스 쉘](http://kali-km.tistory.com/entry/Netcat-Reverse-Shell)을 걸어야 하나 ~~될 리가 없잖아~~ 이것저것 해봤지만 실패
   * 입력값도 잘 처리하는 거 같아서, 버퍼가 넘칠 부분이 잘 보이지를 않았는데..
 
-  ![fig2]{{ site.baseurl }}/images/pwnablekr/blackjack/fig/2.png)
+  ![fig2]({{ site.baseurl }}/images/pwnablekr/blackjack/fig/2.png)
 
   * 갑자기 성공하고 말았다 - _ -;;
 
@@ -53,36 +53,42 @@ title: PWNABLE KR - TODDLER - blackjack - 1pt
 
   * 재입력값을 다시는 체크하는 루틴이 어디에도 없음
 
-  * 마지막으로, 그 재입력값 ```bet```이 승리했을 때는 기존의 자금 ```cash```와 더해져서 ```cash = cash + bet```이지만, 지면 ```cash = cash - bet```이기 때문에. 이겨야 한다. **(이점을 이용하면, bet을 음수로 하면 져도 된다)**
+  * 마지막으로, 그 재입력값 ```bet``` 이 승리했을 때는 기존의 자금 ```cash```와 더해져서 ```cash = cash + bet``` 이지만, 지면 ```cash = cash - bet``` 이기 때문에. 이겨야 한다. **(이점을 이용하면, bet을 음수로 하면 져도 된다)**
 
   ```c
-  if (bet > cash) //If player tries to bet more money than player has search hit BOTTOM, continuing at TOP
 
-      if((choice1 == 'Y') || (choice1 == 'y')) // If yes, continue. Prints menu.
-      h
-  You Win!\n");
-               won = won+1;
-               cash = cash+bet;
-               printf("\nYou have %d Wins and %d Losses. Awesome!\n", won, loss);
-               dealer_total=0;
-               askover();
-           }
-
-           if(p>21) //If player total is over 21, loss
-           {
+  while(i<=21) //While loop used to keep asking user to hit or stay at most twenty-one times
+                  //  because there is a chance user can generate twenty-one consecutive 1's
+     {
+         if(p==21) //If user total is 21, win
+         {
+             printf("\nUnbelievable! You Win!\n");
+             won = won+1;
+             cash = cash+bet;
+             printf("\nYou have %d Wins and %d Losses. Awesome!\n", won, loss);
+             dealer_total=0;
+             askover();
+         }
+        if(p>21) //If player total is over 21, loss
+        {
                printf("\nWoah Buddy, You Went WAY over.\n");
                loss = loss+1;
                cash = cash - bet;
                printf("\nYou have %d Wins and %d Losses. Awesome!\n", won, loss);
                dealer_total=0;
                askover();
-           }
-
+        }
   ```
 
 # 2. Exploit
   * 걍 두 번째 입력받을 때 굉장히 큰 수를 집어넣으면 끝
   * 이러고 이기거나
+
+
 ![fig3]({{ site.baseurl }}/images/pwnablekr/blackjack/fig/3.png)
+
+
   * 이러고 지거나
+
+
 ![fig4]({{ site.baseurl }}/images/pwnablekr/blackjack/fig/4.png)
