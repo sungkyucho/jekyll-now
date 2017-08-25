@@ -52,7 +52,7 @@ TPM과 관련된 자료는 구글에서 쉽게 찾을 수 있으므로 이 부�
  - 따라서, 모니터로 연결하지 말고 UART를 통해 serial port 로 디버깅 해야 함
 
 ### 1) UART Setup
-```c 
+```c
 /media/~/boot/config.txt
 enable_uart=1
 ```
@@ -182,7 +182,7 @@ Change to Physical Presence Failed
 ```
 
  - 사실 여기서 ```-yz```옵션은 ```tpm_takeownership```의 경우 TPM에 대한 access 권한을 가져가는 사람을 인증하기 위한 패스워드를 입력받는데, 그걸 그냥 skip하겠다는 뜻이다.
- - 이게 굉장히 시사하는 바가 큰데.. **결국 TPM 을 소유한 사람을 패스워드로 인증하겠다는 것**이며 HW security라고 한들 결국 **(시스템 내부로 한정지어서) crypto의 끝판은 access control이라는 아이러니한 결론**이 난다.
+ - 이게 굉장히 시사하는 바가 큰데.. **결국 TPM 을 소유한 사람을 패스워드로 인증하겠다는 것** 이며 HW security라고 한들 결국 **(시스템 내부로 한정지어서) crypto의 끝판은 access control이라는 아이러니한 결론** 이 난다.
  - ```y``` 옵션을 빼면, 패스워드를 입력받게 되어 있는데 이를 어떻게 관리하느냐하는 또다른 보안관리 상의 문제가 도출된다..
 
 ## 5. TEST
@@ -199,3 +199,11 @@ pi@raspberrypi:~$ tpm_sealdata version
   Manufacturer Info:   49465800
 ```
 ![fig3]({{ site.baseurl }}/images/tech/tpm/3.png)
+
+## 6. 마무리
+
+어쩌면 당연한 것일 수도 있지만, 참 손이 많이 가고 또 기대했던 것 만큼의 보안을 제대로 제공해주지는 못한다는 느낌이 든다. 즉, TPM 은 정말 암호키를 보호하기 위한 용도. 딱 거기까지인 듯 하다.
+
+이걸 보니까 TrustZone이나 SGX에서 왜 Trusted Execution Environment를 강조하는지 알겠다. 즉, 단순히 암호화키 보호가 아니라 어플리케이션이 실행되는 환경 자체를 보호하기 위한 더 거시적인 차원에서의 보호 메커니즘의 탄생은 당연한 수순이었던 거 같다.
+
+그리고 그만큼 TEE는 정말 어렵다...ㅋㅋㅋ (open ported TEE - Linaro, OP-TEE, 한국발음 "옵티"도 살짝 도전해봤지만, 이건 좀 시간을 많이 투자해야 할 듯 하다)
