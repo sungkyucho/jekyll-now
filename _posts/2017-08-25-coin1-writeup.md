@@ -48,12 +48,12 @@ title: PWNABKE KR - TODDLER - coin1 - 6pt
       print "[FOUND NC] : " + str(nc[0]) + " & " + str(nc[1])
       outbuf  = initbuf(buf, 1, nc[0])
       findfakecoin(outbuf, 1, nc[0], nc[1], 0)
-
  ```
 
- 하지만, 결론적으로 무슨 방법을 쓰든 삽질은 똑같았을 거 같다..
+ 하지만, 결론적으로 무슨 방법을 쓰든 삽질은 똑같았을 거 같다.
 
- ## 2. Approaches
+
+## 2. Approaches
 
  처음에는 일일이 하나씩 입력을 해야 하는 줄 알고 (예: N=299 C=10 이라고 하면, 10번 안에 값을 찍어야 하는 줄 알았다;;) 삽질을 했는데 ```1 2 3 4 5 6 7 8 9 10``` 요런 게 먹힌다는 걸 찾았다. ~~ㅋㅋㅋㅋㅋㅋㅋ~~
 
