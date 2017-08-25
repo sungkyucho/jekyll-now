@@ -231,3 +231,6 @@ p.stdout.close()
 결과는
 
 ![fig4]({{ site.baseurl }}/images/pwnablekr/coin1/fig/4.png)
+
+기념으로 ```nc -o``` 옵션으로 얻은 full log도 첨부.
+[네트워크 로그]({{ site.baseurl }}/images/pwnablekr/coin1/fig/log.txt)
