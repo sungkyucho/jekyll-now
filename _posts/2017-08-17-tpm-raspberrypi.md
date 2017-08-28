@@ -3,6 +3,12 @@ layout: post
 title: Raspberry pi - TPM 연동해보기
 ---
 
+IoT 보안, IoT 보안 하면서 많은 이슈가 불거져 나왔고, 개인적으로 IoT 보안의 방향은 Mobile security와 비슷한 방향으로 흘러가는 것처럼 보인다. 이유는, (사견으로) IT 역사상 가장 빠른 폭발적인 성장을 보였던 모바일 시장에서 그만큼 보안과 관련된 문제도 많이 겪었고, 대응했기 때문.
+
+즉, 정답지가 있는 상태이고 따라서 보안기술 동향도 아마 mobile security를 많이 참고할 것으로 보인다. (하지만, 이런 견해에는 좀 반대다. IoT는 product security보다는 backend에서의 이상징후 등이 더욱 발전하지 않을까 하는 생각 -> 비용문제 때문에)
+
+다만, 그럼에도 불구하고 Amazon Echo나 Google Home의 경우에 보안 SoC를 활용하여 보안기능을 넣은 정황(?)들이 많이 보인다. 그래서 나는 뭘 공부해볼까 하다가, 일단 역사가 가장 오래되고 레퍼런스를 찾기 쉬우면서도 general 한 H/W 모듈인 TPM을 간략하게 살펴봄.
+
 ## 1. TPM?
 [TPM(위키 백과사전 링크)](https://en.wikipedia.org/wiki/Trusted_Platform_Module)은 Trusted Platform Module의 약자로써, 어짜피 널리 알려진 HW 기반 보안모듈이기 때문에 별다른 설명은 생략한다.
 
