@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Raspberry pi - TPM 연동해보기
+categories: security tech.
+
 ---
 
 IoT 보안, IoT 보안 하면서 많은 이슈가 불거져 나왔고, 개인적으로 IoT 보안의 방향은 Mobile security와 비슷한 방향으로 흘러가는 것처럼 보인다. 이유는, (사견으로) IT 역사상 가장 빠른 폭발적인 성장을 보였던 모바일 시장이 가장 시간적으로 최근의 일이면서, 또 그만큼 보안과 관련된 문제도 많이 겪었고 대응했기 때문.

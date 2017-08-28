@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - mistake - 1pt
+categories: wargame
+tags: [pwnablekr, wargame, mistake]
 ---
 
 1pt 짜리라고 하여 우습게 봤다가 생각보다는 오래 살펴봤음. 다만, 혼자 봤으면 아직도 보고 있었을 듯

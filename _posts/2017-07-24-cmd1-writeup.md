@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - cmd1 - 1pt
+categories: wargame
+tags: [pwnablekr, wargame, cmd1]
 ---
 
 곰곰히 생각해보면 별로 어려운 문제는 아닌 듯 하지만, 역시 시간은 좀 필요했음

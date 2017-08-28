@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - Shellshock - 1pt
+categories: wargame
+tags: [pwnablekr, wargame, shellshock]
 ---
 
 IT 업무(특히 보안)를 한 사람이라면 절대 잊을 수 없었던 취약점인 bash [shellshock](https://en.wikipedia.org/wiki/Shellshock_(software_bug))와 관련된 내용임. 아마도 취약점이 발표된 후, 1년이 넘도록 이 취약점을 이용한 공격이 끊이지 않았다는 내용을 관제팀으로부터 들었을만큼 일반적인 공격.

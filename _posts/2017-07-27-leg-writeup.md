@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - leg - 2pt
+categories: wargame
+tags: [pwnablekr, wargame, leg]
 ---
 
 ARM에 대해서는 x86보다는 많이 본 편이었지만(예전에 mobile exploit 분석하느라 울며 겨자먹기 식으로 조금 공부..) 생각보다는 어렵게 풀었다. ~~역시 2점짜리 문제는 1점짜리보다 2배 어려워~~

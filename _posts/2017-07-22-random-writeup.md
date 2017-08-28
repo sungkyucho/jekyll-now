@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - Random - 1pt
+categories: wargame
+tags: [pwnablekr, wargame, random]
 ---
 
 쉬어가기 코너인 듯 하지만, 앞으로의 역경을 미리 알려주는 복선이라고 생각함. 이유는 64bit 가 나오기 시작했기 때문.

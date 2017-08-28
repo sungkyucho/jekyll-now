@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - lotto - 2pt
+categories: wargame
+tags: [pwnablekr, wargame, lotto]
 ---
 
 이건 뒷걸음 치다가 소잡은 격으로 답을 찾은 문제. 거창하게 뭔가 분석을 한 이후에 답을 찾은 것처럼 거짓말을 하기 보다는, 답이 나오고 원인이 뭔지 찾았던 실제 flow대로 설명하고자 한다.

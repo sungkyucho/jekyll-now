@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - blackjack - 1pt
+categories: war game write-up
+tags: [pwnablekr, wargame, blackjack]
 ---
 
 보통은 flag를 읽도록 시스템 구성을 우회하는 문제를 봐왔는데, 이번에는 그냥 nc로 서버에 접속해보라고하는 게 전부였음

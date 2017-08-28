@@ -1,6 +1,8 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - Passcode - 10pt
+categories: wargame
+tags: [pwnablekr, wargame, passcode]
 ---
 
 쉽게 풀릴 줄 알았던 문제인데, 의외로 정말 오랫동안 애를 먹었던 문제.
