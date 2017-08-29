@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PWNABKE KR - TODDLER - coin1 - 6pt
-categories: wargame
+categories: Wargame
 ---
 
 간만에 pwnable write-up.

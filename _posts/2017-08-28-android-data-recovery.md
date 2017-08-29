@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android factory reset - 복구 가능성 관련
-categories: security tech.
+categories: Tech
 ---
 
 사실 이번에 작성하는 내용은, 꽤 예전에 확인했던 내용인데 백업 겸 정리. (내용 자체도 out of date 이지만, 꽤 의미있다)

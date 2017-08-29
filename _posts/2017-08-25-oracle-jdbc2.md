@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Oracle과 JDBC 연동 테스트-2
-categories: dev
+categories: Dev
 ---
 
 아무래도 차근차근 밟아보는 게 아니라, 일단 부딪히고 보다보니.. 막히는 게 너무 많다.

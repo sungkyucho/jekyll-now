@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - Shellshock - 1pt
-categories: wargame
+categories: Wargame
 tags: [pwnablekr, wargame, shellshock]
 ---
 

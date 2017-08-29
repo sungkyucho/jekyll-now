@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Raspberry pi - TPM 연동해보기
-categories: security tech.
+categories: Tech
 
 ---
 

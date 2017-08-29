@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - Passcode - 10pt
-categories: wargame
+categories: Wargame
 tags: [pwnablekr, wargame, passcode]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Elasticsearch - Kibana boot up
-categories: dev
+categories: Dev
 ---
 
 logstash로 데이터는 이제 어떻게 넣을 것인지만 결정하면 되고, 들어간 데이터를 잘 인덱싱하고 viewing하는 것은 Elasticsearch와 Kibana의 역할이다.

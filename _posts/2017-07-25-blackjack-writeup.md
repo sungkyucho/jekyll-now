@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - blackjack - 1pt
-categories: war game write-up
+categories: Wargame
 tags: [pwnablekr, wargame, blackjack]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Oracle과 JDBC 연동 테스트
-categories: dev
+categories: Dev
 ---
 
 요즘 ELK(Elasticsearch + Logstash + Kibana)로 뭐 좀 할 수 있는 거 없나 끄적이는 중..

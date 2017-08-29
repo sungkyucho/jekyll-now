@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PWNABLE KR - TODDLER - lotto - 2pt
-categories: wargame
+categories: Wargame
 tags: [pwnablekr, wargame, lotto]
 ---
 
