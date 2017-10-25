@@ -29,16 +29,16 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
 
 ## 3. Background & 취약점 내용
 
-제가 원 논문을 굳이 매번 찾아서 읽는 이유이기도 합니다. 사실 취약점 내용 자체보다도 주변적인 background가 정말 풍부하게 있기 때문에 뉴스나 블로그 보고 그 취약점 안다고 하기 보다는 실제 다양한 background도 함께 알아둬야 하지 않을까 해서요 ㅋㅋ(그치만 여러 번 읽어도 아직도 잘 모르겠네요)
-
+개인적으로 원 논문을 굳이 매번 찾아서 읽는 이유인데, 사실 취약점 내용 자체보다도 주변적인 background가 정말 풍부하게 있기 때문에 **뉴스나 블로그 보고 그 취약점 안다고 하면 솔직히 개인적으로 쪽팔리기 때문에**, 그리고 논문의 related work 부분에서 제시하는 다양한 background도 함께 알아둬야 하지 않을까 한다.
 
 ### 1. 802.11i (무선랜 보안표준)
 
-+ TKIP (Deprecated, 보안이슈로 인해 현재 폐기된 상태)을 사용하며 RC4-128bit와 48bit 의 nonce를 사용합니다
++ TKIP (Deprecated, 보안이슈로 인해 현재 폐기된 상태)을 사용하며 RC4-128bit와 48bit 의 nonce를 사용함
 
-+ CCMP, AES-CCM 모드로 동작하며 WPA에서 사용하는 기본적인 암호 스킴입니다
++ CCMP, AES-CCM 모드로 동작하며 WPA에서 사용하는 기본적인 암호 스킴
 
-+ 2012년에 상기 Protocol 둘 다 마음에 안들어서 AES-GCM(GCM은 G-Hash기반으로 메시지 인증이 가능한 mode of operation)이 추가되었습니다
++ 2012년에 상기 Protocol 둘 다 마음에 안들어서 AES-GCM(GCM은 G-Hash기반으로 메시지 인증이 가능한 mode of operation)이 추가됨
++ 기타 이 부분은 워낙 검색만 해봐도 잘 나오기 때문에 패쓰.
 
 ### 2. 키 계층
 
@@ -71,6 +71,7 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
 By forcing nonce reuse in this manner, the data-confidentiality protocol can be attacked,
 e.g., packets can be replayed, decrypted, and/or forged. The same technique is used to attack the group key, PeerKey, and fast BSS transition handshake.
 ```
+
 + 다만, 복호화가 설명대로 된다면.. TCP/HTTP injection 등 상상할 수 있는 모든 공격이 가능하기 때문에 impact는 크다고 볼 수 있음
 
 ### 취약점에 대한 중간 평가
