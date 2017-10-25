@@ -68,8 +68,12 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
 + Decryption과 관련된 부분은, 결론적으로 실제 복호화를 하기 위해서는 꽤 많은 컴퓨팅 파워를 써야 하는 것 아닌가 싶은데.. **가장 중요한 복호화 관련된 설명이 굉장히 부실하다**
 
 ```
-By forcing nonce reuse in this manner, the data-confidentiality protocol can be attacked,
-e.g., packets can be replayed, decrypted, and/or forged. The same technique is used to attack the group key, PeerKey, and fast BSS transition handshake.
+By forcing nonce reuse in this manner, the
+data-confidentiality protocol can be attacked,
+e.g., packets can be replayed, decrypted, and/or
+forged. The same technique is used to attack the
+group key, PeerKey, and fast BSS transition
+handshake.
 ```
 
 + 다만, 복호화가 설명대로 된다면.. TCP/HTTP injection 등 상상할 수 있는 모든 공격이 가능하기 때문에 impact는 크다고 볼 수 있음
@@ -80,15 +84,21 @@ e.g., packets can be replayed, decrypted, and/or forged. The same technique is u
 + 실제로 이번 논문도 여러 차례에 걸쳐서 수학적으로 증명된 시스템의 특성을 건드리지 않았음에도 취약점을 밝혀냈다고 공치사를 함. (사실 논문은 당연히 그래야 하지만..ㅋ)
 
 ```
-In spite of its history and security proofs though, we show that the 4-way handshake is vulnerable to key reinstallation attacks.
+In spite of its history and security proofs
+though, we show that the 4-way handshake is
+vulnerable to key reinstallation attacks.
 ```
 
 ```
-Interestingly, our attacks do not violate the security properties proven in formal analysis of the 4-way and group key handshake.
+Interestingly, our attacks do not violate the
+security properties proven in formal analysis of
+the 4-way and group key handshake.
 ```
 
 ```
-Second, it is not because a protocol has been formally proven secure, that implementations of it are also secure.
+Second, it is not because a protocol has been
+formally proven secure, that implementations of
+it are also secure.
 ```
 
 ~~고마해라. 니 잘 했다 그래~~
