@@ -14,12 +14,12 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
 
 이번에는 사실 기업은 아니고 뭔가 벨기에 쪽 학교에 다니는 학생으로 보이긴 했지만, 저렇게 뻥 터뜨리는 것은 늘 좀 비판적으로 살펴볼 필요가 있다는 마음에 논문을 찾아 읽어보기 시작했다.
 
-##1. 관련 링크
+## 1. 관련 링크
 + https://www.krackattacks.com/
 + https://papers.mathyvanhoef.com/ccs2017.pdf
 + 나머지는 그냥 뉴스 검색 ㄱㄱ
 
-##2. 문제점 및 현황
+## 2. 문제점 및 현황
 + 핵심은 다양한 조건을 가진 상태로 Key re-installation attack(이하 KRACK)이 가능하다는 것이며, 논문 상으로 취약점이 굉장히 다양하게 기술되어 있는 듯 하지만 주된 핵심은 "암호화된 메시지를 받느냐 안받느냐"등의 조건(condition)을 기반으로 KRACK이 가능한지를 검토함
 + 논문 내부에서도 MiTM 특성 상 실제로 수행되기 어려운 공격이라는 자평을 내보임.
   + Windows와 iOS에서는 KRACK 취약점이 발생하기 위한 조건이 성립되지 않음 -> Retransmission msg #3를 받아들이지 않기 때문
@@ -27,12 +27,12 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
   + 구현 특성이 조금 있음, 즉 각 vendor별로 spec.에 따른 구현방식이 차이가 조금 있음
 + 외부에서의 평도 **기술적으로는 훌륭하나, 난이도가 높고 재현가능성은 낮다** 는 평이 보이며, 실 환경에서의 공격가능성은 낮은 것으로 보임
 
-##3. Background & 취약점 내용
+## 3. Background & 취약점 내용
 
 제가 원 논문을 굳이 매번 찾아서 읽는 이유이기도 합니다. 사실 취약점 내용 자체보다도 주변적인 background가 정말 풍부하게 있기 때문에 뉴스나 블로그 보고 그 취약점 안다고 하기 보다는 실제 다양한 background도 함께 알아둬야 하지 않을까 해서요 ㅋㅋ(그치만 여러 번 읽어도 아직도 잘 모르겠네요)
 
 
-###1. 802.11i (무선랜 보안표준)
+### 1. 802.11i (무선랜 보안표준)
 
 + TKIP (Deprecated, 보안이슈로 인해 현재 폐기된 상태)을 사용하며 RC4-128bit와 48bit 의 nonce를 사용합니다
 
@@ -40,7 +40,7 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
 
 + 2012년에 상기 Protocol 둘 다 마음에 안들어서 AES-GCM(GCM은 G-Hash기반으로 메시지 인증이 가능한 mode of operation)이 추가되었습니다
 
-###2. 키 계층
+### 2. 키 계층
 
 + WPA의 경우 PMK(Pre-shared Master Key), ANonce(AP의 Nonce), SNonce(Supplicant 즉 client의 nonce), MACaddr 을 기반으로 PTK가 만들어지고
 + PTK(Pairwise Transition Key)는 3가지 키로 다시 나뉘게 되는데..
@@ -49,7 +49,7 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
 
 ![fig1]({{ site.baseurl }}/images/tech/krack/1.png)
 
-###3. 4-way handshake
+### 3. 4-way handshake
 
 + 저러한 키들을 나눠갖기 위한 negotiation 과정이 바로 4-way handshake이며, 해당 그림은 아래와 같다.
 
@@ -59,7 +59,7 @@ KRACK은 Key re-installation attack이라고 해서, 802.11에서 제공하는 �
 + **Nonce가 reset 된다는 의미는, nonce가 replay attack을 방지하기 위한 목적이라는 점** 을 상기하면됨. 즉, 예전에 썼던 걸 다시 그대로 쓰려고 하면 nonce가 막아줘야 하는데 이게 reset이 되버리면 예전에 썼던 것들이 그대로 먹힌다는 점임.
 
 
-##4. 영향도 및 1차 평가
+## 4. 영향도 및 1차 평가
 
 ### 취약점으로 인한 영향
 + 가장 중요한 것은 802.11에서 nonce를 재사용하는 것에 대한 영향도이며 즉, 이걸 재사용했을 때 replay attack은 기본적으로 가능하고 복호화까지 가능하다고 기술되어 있다. **(이 부분은 하기 별도 기술)**
@@ -92,7 +92,7 @@ Second, it is not because a protocol has been formally proven secure, that imple
 
 ~~고마해라. 니 잘 했다 그래~~
 
-##5. Decryption에 대해 조금 더 살펴보기
+## 5. Decryption에 대해 조금 더 살펴보기
 
 일단 지금까지 읽었을 때, WPA/WPA2를 깼다는 것은 일반적으로 어떤어떤 취약점을 통해 해독 또는 복호화를 할 수 있다는 것으로 받아들이는 것이 상식적일 듯 하다.
 
@@ -126,7 +126,7 @@ Second, it is not because a protocol has been formally proven secure, that imple
 
 ```
 
-##6. 결론
+## 6. 결론
 
 KRACK 자체를 폄하하려는 생각도 없고, 또 충분히 좋은 취약점이라고 생각한다. 특히 나는 아무래도 기업에서 일을 하는 입장이다보니, 이렇게 쉽게 찾을 수 있는 (당연스레 사용되고 앴는) 기기에서의 취약점은 매우 가치있는 취약점이라고 생각한다.
 
