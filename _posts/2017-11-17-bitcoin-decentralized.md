@@ -96,7 +96,10 @@ Bitcoin의 블록헤더 구성은 아래와 같다.
 
 to be continue...
 
-### 비트코인캐시 하드포크 후 상황(XML, DASH 폭등)
+### 비트코인캐시 하드포크 후 상황
+
+#### 모네로, dash 폭등
+#### coin dance / fork.lol
 
 ### 결론
 
