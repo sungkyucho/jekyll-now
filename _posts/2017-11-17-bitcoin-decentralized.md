@@ -94,7 +94,7 @@ Bitcoin의 블록헤더 구성은 아래와 같다.
 
 위에서 언급했던 것처럼, 블록사이즈 제한으로 인해 발생하는 문제를 해결하고자 하는 것이 비트코인캐시의 ~~명분상으로만 존재하는~~ 전략이다.
 
- ![bch]({{ site.baseurl }}/images/tech/bitcoin/6.png)
+ ![bch]({{ site.baseurl }}/images/tech/bitcoin/6.jpg)
 
  이를 통해 결제시스템에도 연동을 쉽게 할 수 있고 [bitpay에서 bitcoin cash를 결제수단으로 제공](https://blog.bitpay.com/bitcoin-cash-wallet-beta/) 블록 사이즈도 8M로 늘려 처리 지연 등의 문제가 없다.
 
