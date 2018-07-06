@@ -110,7 +110,7 @@ after the first flaw but before July 28, 2017.
 
 다만 일반적인 취약점 분석팀은 자사 서비스나 상품/제품에 대한 취약점 분석을 주로 하는데 반해, Google Project Zero는 안전한 인터넷을 만들기 위해 다른 제품/서비스를 까는(?) 담당을 한다.
 
-(참고로 구글 자사 제품에 대한 취약점 분석은 VRP(https://www.google.com/about/appsecurity/reward-program/) 프로그램을 이끄는 Eduardo Vela가 스위스에서 담당하고 있는 것으로 알고 있음. 출처는 이승진 사장님)
+(참고로 구글 자사 제품에 대한 취약점 분석은 [VRP](https://www.google.com/about/appsecurity/reward-program/) 프로그램을 이끄는 Eduardo Vela가 스위스에서 담당하고 있는 것으로 알고 있음. 출처는 이승진 사장님)
 
 최신 현황은 아니지만, 대충 통계를 뽑아보면 아래와 같다.
 
@@ -131,4 +131,12 @@ after the first flaw but before July 28, 2017.
 
 솔직히 말하자면, Project Zero를 양날의 검으로 너무 잘 활용하고 있는 것 아닐까 싶다. 즉, 자신들의 명분인 안전한 인터넷을 만들기 위한 좋은 성과(중요 취약점)도 낼 뿐만 아니라, 그 결과를 끊임없이 발표함으로 인해서 취약점이 확인된 제품/서비스에 큰 타격을 주기도 한다는 점이다.
 
-Don't be evil. 과연 Project Zero 팀에도 이 문구를 적용할 수 있을지 항상 궁금하다. 
+실제로 meltdown 으로 인해 인텔은 주가에 영향을 주기도 했고 ([출처](http://www.nocutnews.co.kr/news/4902631)), 인텔칩을 바꿔야 하는지를 검토했던 회사도 있었던 것으로 알고 있다.
+
+그리고 인텔과 구글이 사전에 responsible disclosure를 위해 협의했던 날짜보다 더 빨리 구글이 일방적으로 공개하기도 했다. ([출처](http://www.boannews.com/media/view.asp?idx=67068)) ~~이게 얼마나 vendor를 엿먹이는 짓인지 보안 쪽에서 일해본 사람은 알 것이다~~
+
+그런 이유로, meltdown이 공개된 시점에서 intel 은 자사 홈페이지에 패치를 올려놓지도 못했었다는 거... 아무리 찾아도 없더라...
+
+그리고 이런 기사. 구글 클라우드는 문제 없다.. [구글, 인텔CPU 보안패치 성능저하 상쇄했다.](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20180115153906)
+
+Don't be evil. 과연 Project Zero 팀에는 적용할 수 있겠지만, 그의 주인인 Google에 이 문구를 적용할 수 있을지 한번 더 궁금해진다.
