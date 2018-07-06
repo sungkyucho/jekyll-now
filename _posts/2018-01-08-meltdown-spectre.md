@@ -139,4 +139,8 @@ after the first flaw but before July 28, 2017.
 
 그리고 이런 기사. 구글 클라우드는 문제 없다.. [구글, 인텔CPU 보안패치 성능저하 상쇄했다.](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20180115153906)
 
-Don't be evil. 과연 Project Zero 팀에는 적용할 수 있겠지만, 그의 주인인 Google에 이 문구를 적용할 수 있을지 한번 더 궁금해진다.
+뭐 물론 내가 삐딱선을 타서 그런 것일 수도 있겠지만, openssl 취약점이 공개된 이후에는 구글 자체 암호 라이브러리가 발표되고, spectre 취약점 이후에는 자체 칩 설계 관련된 이슈가 나오고..
+
+걍 삼성전자 있을 때부터 "과연 구글은 구축한 이미지 만큼 착한 기업인건가"라는 의문을 많이 품었기 때문일지도 모른다.
+
+Don't be evil. Project Zero 팀에는 적용할 수 있겠지만, 그의 주인인 Google에 이 문구를 적용할 수 있을지 한번 더 궁금해진다.
