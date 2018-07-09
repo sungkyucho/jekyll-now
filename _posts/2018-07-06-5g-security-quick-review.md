@@ -16,7 +16,7 @@ LTE가 4G인 것은 대부분 알고 있고, 와이브로 ~~완전 망한~~ 가 
 
 즉, 하나의 망을 모두가 다 똑같이 쓰는 게 아니라 서비스와 파트너 특성별로 네트워크를 slicing 하여 이를 목적에 맞게 망을 나눠서 쓸 수 있게 하겠다는 것이 기존 Generation 대비, 5G의 특성으로 보인다는 점이다.
 
-내 해석이 잘못되었을 수도 있지만. 나는 이걸 기존 IT망이 IDC에서 클라우드로 이동했던 것처럼 NW망도 하나의 클라우드화가 되는 것이라고 바라본다. 
+내 해석이 잘못되었을 수도 있지만. 나는 이걸 기존 IT망이 IDC에서 클라우드로 이동했던 것처럼 NW망도 하나의 클라우드화가 되는 것이라고 바라본다.
 
 ![그림1]({{ site.baseurl }}/images/tech/5g/1.png)
 
@@ -49,27 +49,48 @@ https://docbox.etsi.org/Workshop/2017/201706_SECURITYWEEK/06_5GSECURITY/S02/HUAW
 
 기타 [IEEE](http://icc2018.ieee-icc.org/workshop/1st-ieee-workshop-5g-wireless-security-5g-security)에서는 아래와 같은 주제로 5G Security에 대한 폭넓은 논의를 진행하고 있다고 한다니 정말 엄청난 width/depth의 영역이 아닐 수 없다.
 
-```5G architecture with security and privacy considerations
+```
+5G architecture with security and privacy considerations
+
 Security for new service delivery models
-Verticals and business (non-technical) 5G security requirements and solutions
+Verticals and business (non-technical) 5G  security requirements and solutions
+
 Big data analytics tools and techniques in 5G Security
+
 Advances in lightweight cryptography and IoT/CPS security
+
 Wireless virtualization and slicing security
+
 Authentication, authorization, and accounting (AAA) for 5G security
+
 Diameter security in 5G
+
 Quantum Safe Cryptography for 5G
+
 Secure Integration of IoT/CPS and Cloud Computing
+
 Secure Device-to-Device communications in 5G
+
 Secure integration of IoT /CPS and other networks
+
 Intrusion Detection/Prevention Techniques and System Integrity
+
 Secure data storage, communications and computing
+
 Energy efficient security in IoT and CPS
+
 Heterogeneous system modeling for 5G security
+
 Secure sensing and computing techniques in 5G
+
 Big data analytics for 5G security
+
 Secure, privacy-aware and trustworthy IoT/CPS communications
+
 Trust models and trust handling/propagation for 5G security
+
 Physical layer security for 5G
+
 5G security standardization
 ```
 
