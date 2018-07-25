@@ -56,13 +56,16 @@ Security analysis is primarily a human-driven process.
 
 ### 시사점
 
+#### PROS
+
 특별히 이번에 시사점은 없지만, 개인적으로 mobile security 쪽을 잠깐 했던 사람으로써 이렇게 구체적인 요구사항이 나온다는 것이 시간이 좀 걸리긴 했지만 상당히 반가운 일이긴 하다.
 
 아마도 대부분의 회사들이 모바일 앱 진단과 관련된 업무가 어느 정도 있을텐데 (외주를 주더라도) 이걸 참고하면 훨씬 더 좋은 퀄리티가 나올 수 있지 않을까 싶다.
 
-실제로 위에 언급했듯이 Threat model과 vulnerabilities classification 들은 보완할 점이 있다 하더라도 꽤 잘 정리된 것 같다.
+실제로 위에 언급했듯이 Threat model과 vulnerabilities classification 들은 보완할 점이 있다 하더라도 꽤 잘 정리된 것 같다. 이 부분은 모바일 앱 점검, assessment process를 운영하고 있거나 운영할 예정의 담당자라면 잘 살펴보아야 할 대목이라고 생각한다.
 
-물론 늘 그렇듯이. 모든 표준문서와 요구사항을 정리한 formal한 문서에는 아래와 같은 뉘앙스의 글이 언제나 담겨있다. ~~보안엔 끝이 없어~ 난 이것만 적었지만, 이게 전부는 아니야~~
+#### CONS
+물론 늘 그렇듯이. 모든 표준문서와 요구사항을 정리한 formal한 문서에는 아래와 같은 뉘앙스의 글이 언제나 담겨있다. ~~보안엔 끝이 없어~ 난 이것만 적었지만, 이게 전부는 아니야. 내 책임 아니야~~
 
 ```
 As with any software assurance process,
@@ -79,6 +82,4 @@ does and does not provide in terms of security.
 
 특히. 최근처럼 Rooting조차 어렵고, rooting을 한다 하더라도 SELinux와 SEAndroid때문에 shell 조차도 할 수 있는 게 별로 없는 상태에서 **Mobile app security에 대한 needs가 더 강해질 것 같지는 않다.**
 
-때문에 다소 늦은 감이 있긴 하지만.
-
-해당 문서가 나왔으니 아마도 DoD나 각국 정부에 MDM 등의 앱을 판매할 때 요런 요구사항을 기반으로 개발이 되어야 할텐데, 마케팅적인 요소로는 손색이 없을 것 같다.
+때문에 다소 늦은 감이 있긴 하지만.해당 문서가 나왔으니 아마도 DoD나 각국 정부에 MDM 등의 앱을 판매할 때 요런 요구사항을 기반으로 개발이 되어야 할 것 같다는..(정식 PP가 나온다면 더더욱).. 그래서 보안하는 사람들은 더 빡쎄질 거 같다는..결론. 끝~~~
