@@ -95,7 +95,7 @@ the components and processes of ISO/IEC 27034.
 
 * 참고기사: [공급망 공격이란 무엇이며, 어떻게 대처해야 하는가](https://www.boannews.com/media/view.asp?idx=66253)
 
-그냥 한 때의 유행이거니 했는데, 이 문서를 보면서 생각이 좀 바뀌었다. 구글 스콜라에 검색해보면, 이미 학계나 일부 업계에서는 2000년도 초반부터 SCS에 대한 고민이 많았던 것 같다.
+저 당시에는 "그냥 한 때의 유행이거겠니" 했는데, 이 문서를 보면서 생각이 좀 바뀌었다. 구글 스콜라에 검색해보면, 이미 학계나 일부 업계에서는 2000년도 초반부터 SCS에 대한 고민이 많았던 것 같다.
 
 그러면서 떠오른 게. [CC(common criteria)](https://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf) 공부할 때 제일 이해가 안되었던 부분이 바로 delivery(ALC_DEL) 부분이었는데, 이게 그거구나 하는 생각이 들었다.. 아하.. ~~교수님 제가 공부를 하다 말았나봅니다..~~
 
