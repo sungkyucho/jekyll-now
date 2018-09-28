@@ -39,9 +39,9 @@ GSMA에서는 크게 두 가지 범주로 IoT security에 대하여 정리했다
 
 ### Risk assessment model
 
- 질문지 중에, risk assessment를 formal 한 방법으로 하느냐 하면서 예로 OCTAVE를 드는데, 나름 보안바닥에서 10년 가까이 있었음에도 아예 처음 듣는 단어였다. 보니까 제시된 것도 2003년인데, 신기술도 아니고..
+ 질문지 중에, risk assessment를 formal 한 방법으로 하느냐 하면서 예로 OCTAVE를 드는데, 아예 처음 듣는 단어였다. 보니까 제시된 것도 2003년인데, 신기술도 아니고.
 
-뭔지 찾아보니 OCTAVE는 **Operationally Critical Threat, Asset, and Vulnerability Evaluation** 의 준말로써, information security risk 를 평가하려는 목적으로써, 정보자산(information-asset)을  CIA(Confidentiality, Integrity, Availability) 관점에서 살펴보는 프레임워크로 보면 된다.
+뭔지 찾아보니 OCTAVE는 **Operationally Critical Threat, Asset, and Vulnerability Evaluation** 의 준말로써, information security risk 를 평가하려는 목적을 통해 정보자산(information-asset)을  CIA(Confidentiality, Integrity, Availability) 관점에서 살펴보는 하나의 프레임워크로 보면 된다.
 
 ~~보면 카네기 멜론에서 제시한 문서던데, 역시 CMMI를 비롯하여 카네기 멜론은 이러한 software engineering 분야에 있어서는 최고인가보다.~~
 
