@@ -12,7 +12,8 @@ categories: Tech
 
 그러다보니 사내에서 IoT security를 하는 사람이 나 밖에 없는지라 이걸 담당하게 되면서 문서를 좀 살펴보게 됐는데. 아주 뜬구름 같고 현실을 모르는 문서이긴 하지만 security 측면에서 살펴보면 또 그간 몰랐던 것들이 많이 나와서 정리해둘 필요가 있을 듯 하다.
 
-**참고로** GSMA 에서는 현재 크게 3가지의 주요 어젠다를 제시했는데 **1)5G 2)인증 3)IoT security** 라고 한다. 5G를 제외하고는 보안 쪽 어젠다가 2가지인 것을 보면.. 그들도 이제 할 거가 많이 없다는 걸 추측할 수 있다..
+**참고로.**
+GSMA 에서는 현재 크게 3가지의 주요 어젠다를 제시했는데 **1)5G 2)인증 3)IoT security** 라고 한다. 5G를 제외하고는 보안 쪽 어젠다가 2가지인 것을 보면.. 그들도 이제 할 거가 많이 없다는 걸 추측할 수 있다..
 
 ## GSMA IoT security guidance 살펴보기
 
@@ -24,7 +25,7 @@ GSMA에서는 크게 두 가지 범주로 IoT security에 대하여 정리했다
 
 위 그림에서도 통신사들의 연합체인 GSMA 답게, Communication Network (즉, 이동통신망이겠지..) 는 매우 중요한 지점에 위치한다. ~~실제로도 그럴까..~~
 
-그리고 주요 가이드라인들도
+그리고 주요 가이드라인들도 아래 구성요소 + Network operator로 이루어진다.
 
  * **Service ecosystem** – The Service Ecosystem represents the set of services, platforms, protocols, and other technologies required to provide capabilities and collect data from Endpoints deployed in the field.
  * **Endpoint ecosystem** – The Endpoint Ecosystem consists of low complexity devices, rich devices and gateways that connect the physical world to the digital world in via several types of wired and wireless networks
@@ -33,9 +34,10 @@ GSMA에서는 크게 두 가지 범주로 IoT security에 대하여 정리했다
  일단 기본 링크는 아래.
  https://www.gsma.com/iot/iot-security-assessment/
 
- ## 그간 잘 모르던 부분들
 
- ### Risk assessment model
+##그간 잘 모르던 부분들
+
+### Risk assessment model
 
  질문지 중에, risk assessment를 formal 한 방법으로 하느냐 하면서 예로 OCTAVE를 드는데, 나름 보안바닥에서 10년 가까이 있었음에도 아예 처음 듣는 단어였다. 보니까 제시된 것도 2003년인데, 신기술도 아니고..
 
@@ -57,7 +59,7 @@ GSMA에서는 크게 두 가지 범주로 IoT security에 대하여 정리했다
  * https://www.itgovernance.co.uk/files/Octave.pdf
 
 
- ### Secure Development Lifecycle
+### Secure Development Lifecycle
 
 난 application security라든가 SDL이 표준으로 명시되어 있는지 이번에 처음 알았다..ㅋㅋ (~~별 게 다 표준으로 있구나..~~)
 
@@ -87,7 +89,7 @@ the components and processes of ISO/IEC 27034.
 
 결국 SDL이라는 것은 MS의 전유물이 아니라, 그들도 risk management의 일환으로 자체적인 내부 기준/프로세를 구축한 것이며 **중요한 것은 표준이 아니라 그걸 어떻게 개별 기업들이 자기네들 환경에 맞게 어떻게 소화해내느냐** 가 아닐까 싶다.  
 
- ## Supply chain security
+## Supply chain security
 
 얼마 전에 국내에도 크게 이슈가 되었던 공급망 공격, Supply chain security가 이 문서에도 명시가 되어 있다.
 
