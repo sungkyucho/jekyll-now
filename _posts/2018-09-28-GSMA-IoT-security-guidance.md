@@ -125,7 +125,8 @@ initial code and data state of the Root of Trust
 
 그리고 wiki에서 찾은 Trust anchor는 아래와 같다.
 
-https://en.wikipedia.org/wiki/Trust_anchor
+* 참고링크 - [Trust anchor by WIKI](https://en.wikipedia.org/wiki/Trust_anchor)
+
 ```
 In cryptographic systems with hierarchical
 structure, a trust anchor is an authoritative
