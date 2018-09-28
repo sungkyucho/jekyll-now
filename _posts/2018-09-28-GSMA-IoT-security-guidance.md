@@ -139,7 +139,7 @@ entity for which trust is assumed and not derived
 
 [예전에 블로그에도 TPM 관련한 글을 썼지만.](https://sungkyucho.github.io/sungkyu/tech/tpm-raspberrypi/)
 
-TPM이나 TCB라고 다 좋은 것도 아니고. 특히 비용적인 측면에서 아직 이러한 것들은 오바다.
+TPM이나 TCB라고 다 좋은 것도 아니고. 특히 비용적인 측면에서 아직 이러한 것들은 오바다. 뒤의 결론부에서 다시 한번 언급할 예정이지만, 보안이라고 무작정 때려넣는 게 아니라 무엇이든지 자산규모나 시장 규모에 맞춰서 움직일 수 밖에 없는데 TPM 칩 하나 박는데 2000원 정도라면.. 현재 상태에서는 그 어떤 제조사도 넣을 수가 없다. (이건 아마 mobile 시장이라도 마찬가지일 듯 하다)
 
 이 외에도 요구한 것들이 Rowhammer attack([참고링크 - 위키](https://en.wikipedia.org/wiki/Row_hammer))에 대응이 되는지 , Tamper resistant 한지를 묻는 내용들은 모두 통신사에서 이행하기는 어려운 부분으로 보인다.
 
