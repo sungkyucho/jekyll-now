@@ -31,8 +31,7 @@ GSMA에서는 크게 두 가지 범주로 IoT security에 대하여 정리했다
  * **Endpoint ecosystem** – The Endpoint Ecosystem consists of low complexity devices, rich devices and gateways that connect the physical world to the digital world in via several types of wired and wireless networks
 
 
- 일단 기본 링크는 아래.
- https://www.gsma.com/iot/iot-security-assessment/
+ 일단 기본 링크 여기 - [IoT Security Assessment](https://www.gsma.com/iot/iot-security-assessment/) 
 
 
 ## 그간 잘 모르던 부분들
