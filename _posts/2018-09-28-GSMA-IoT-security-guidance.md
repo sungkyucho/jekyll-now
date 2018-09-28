@@ -31,7 +31,7 @@ GSMA에서는 크게 두 가지 범주로 IoT security에 대하여 정리했다
  * **Endpoint ecosystem** – The Endpoint Ecosystem consists of low complexity devices, rich devices and gateways that connect the physical world to the digital world in via several types of wired and wireless networks
 
 
- 일단 기본 링크 여기 - [IoT Security Assessment](https://www.gsma.com/iot/iot-security-assessment/) 
+ 일단 기본 링크 여기 - [IoT Security Assessment](https://www.gsma.com/iot/iot-security-assessment/)
 
 
 ## 그간 잘 모르던 부분들
@@ -99,6 +99,17 @@ the components and processes of ISO/IEC 27034.
 그러면서 떠오른 게. [CC(common criteria)](https://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf) 공부할 때 제일 이해가 안되었던 부분이 바로 delivery(ALC_DEL) 부분이었는데, 이게 그거구나 하는 생각이 들었다.. 아하.. ~~교수님 제가 공부를 하다 말았나봅니다..~~
 
 아래 링크는 IBM에서 작성한 SCS 관련하여 살펴봐야 할 내용들을 정리한 문서인데. 다 읽어보진 않았지만 내용이 참 좋은 듯 하다. 좋다고 하는 이유는, 그게 회사 입장에서 benefit이 된다고 하는, **단순한 문제점 제기 -> 대안제시의 일반적인 문서가 아니라 실제 장점을 제시해주고 있기 때문** 이다. 글로벌 혹은 대규모 공급망을 가지고 있는 제조사 등은 고려해보면 참 좋을 내용이다.
+
+해당 문서에서 SCS를 위해 체크하는 내용과, benefit을 간략하게 요약한 표는 아래와 같다.
+
+ ![그림3]({{ site.baseurl }}/images/tech/gsma/22.png)
+
+ ![그림4]({{ site.baseurl }}/images/tech/gsma/33.png)
+
+ ![그림5]({{ site.baseurl }}/images/tech/gsma/44.png)
+
+그리고.
+
 
 * 문서링크 - [Investing in Supply Chain Security:
 Collateral Benefits](http://www.husdal.com/wp-content/uploads/2009/02/investing-in-supply-chain-security.pdf)
