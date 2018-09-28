@@ -56,7 +56,7 @@ GSMA에서는 크게 두 가지 범주로 IoT security에 대하여 정리했다
 참 old-fashion 인 듯 하면서도 ~~언제적 CIA야..요즘은 면접에서 CIA 얘기하면 탈락이다..~~ CC나 CMMI 등의 표준과도 상통하는 부분이 딱 보인다. 특히, 보안영역은 늘 괴리가 있는 게 (컨퍼런스나 해킹대회, 전문가집단 등) **바깥에서는 늘 기술만을 강조하고, 대기업은 뒤떨어졌다 뭐 어쩐다 얘기를 많이 하는데 사실 그게 그렇게 쉬운 일이 아니다. 개인적으로 그 이유가 안정성이나 운영 측면, 관리 측면이 함께 수반되어야 하기 때문** 이라고 생각하는데 해당 문서는 그러한 지점들을 잘 짚어내고 있는 느낌이다.    
 
 전문은 아래 링크에서.
- * https://www.itgovernance.co.uk/files/Octave.pdf
+ * [Introduction to the OCTAVE® Approach](https://www.itgovernance.co.uk/files/Octave.pdf) 
 
 
 ### Secure Development Lifecycle
