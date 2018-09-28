@@ -8,7 +8,7 @@ categories: Tech
 
 그냥 부담갖지 말고, 가볍게 정리해놓는 목적을 잊지 말자.
 
-회사에서 GSMA(https://en.wikipedia.org/wiki/GSMA, 그냥 통신사들의 연합모임)의 IoT security guideline을 준수하겠다는 내용으로 [press release](https://www.sktelecom.com/en/press/press_detail.do?idx=1279) 가 아주 작게 있었다. ~~왜 따를까~~~
+회사에서 [GSMA](https://en.wikipedia.org/wiki/GSMA) (그냥 통신사들의 모임, ~~친목단체?~~)의 IoT security guideline을 준수하겠다는 내용으로 [press release](https://www.sktelecom.com/en/press/press_detail.do?idx=1279) 가 아주 작게 있었다. ~~왜 따를까~~~
 
 그러다보니 사내에서 IoT security를 하는 사람이 나 밖에 없는지라 이걸 담당하게 되면서 문서를 좀 살펴보게 됐는데. 아주 뜬구름 같고 현실을 모르는 문서이긴 하지만 security 측면에서 살펴보면 또 그간 몰랐던 것들이 많이 나와서 정리해둘 필요가 있을 듯 하다.
 
