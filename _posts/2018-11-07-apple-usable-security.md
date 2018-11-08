@@ -22,11 +22,11 @@ categories: Tech
 
 ![그림3]({{ site.baseurl }}/images/tech/ios/33.png)
 
-대부분의 사람은 그게 뭐 어떠냐라고 이야기하겠지만, 나는 대단히 감동적이었다. Security & Privacy를 저렇게 사용자 관점에서 서비스 레벨로 올려놓은 케이스가 얼마나 될 것인가? **모든 것을 사용자의 책임으로 넘기는 요즘 보안 기능의 추세** 로 볼 때 분명히 애플은 보안에 대해서 어떻게 접근해야 하는지 알고 접근하는 듯한 느낌을 받았기 때문이다.
+대부분의 사람은 그게 뭐 어떠냐라고 이야기하겠지만, 나는 대단히 감동적이었다. `Security & Privacy`를 저렇게 사용자 관점에서 서비스 레벨로 올려놓은 케이스가 얼마나 될 것인가? **모든 것을 사용자의 책임으로 넘기는 요즘 보안 기능의 추세** 로 볼 때 분명히 애플은 보안에 대해서 어떻게 접근해야 하는지 알고 접근하는 듯한 느낌을 받았기 때문이다.
 
 너무 극단적인 예일 수는 있지만, 거의 모든 보안솔루션+보안기능들은 "사용자/관리자의 책임"으로 마무리를 지으려고 한다. 브로셔나 소개 페이지에서는 모든 게 완벽하게 방어하고 막는 것처럼 보이지만, 실제로 최종 결정이나 판단은 모두 사용자 혹은 관리자에게 떠넘기고 있다.
 
-Mark dowd의 The are of security assessment 에서 분류하는 취약점 분류 상, operational vulnerability는 모두 저 지점에서 발생한다. 그리고 그러한 취약점은 특성 상 매우 간단하면서도 impact는 매우 큰 취약점들이다.
+Mark dowd의 `The are of security assessment` 에서 분류하는 취약점 분류 상, `operational vulnerability`는 모두 저 지점에서 발생한다. 그리고 그러한 취약점은 특성 상 매우 간단하면서도 impact는 매우 큰 취약점들이다.
 
 나는 이런 게 극도로 싫다. **보안전문가들이 해줘야 하는 일은 현재 가진 (보안)문제점에 대해서 전체를 바라보면서 최종적으로 판단을 하고, 결정을 해주는 일** 이어야 한다고 믿는다. "모든 침해위협을 다 탐지한다!"는 게 무슨 소용인가? 사람이 하루에 백만개씩 오탐을 걸러내야 한다면.. 그렇다면 거기서 무엇을 어떻게 판단하고 결정해야만 하는 것인가? 이것이 보안 담당자들이 해줘야 하는 일이라고 생각한다.
 
@@ -51,17 +51,17 @@ imessage는 문자앱인데. 처음에는 일반적인 간단한 기능이라고
 This per-message AES key is encrypted using RSA-OAEP to the public key of the receiving device. The combination of the encrypted message text and the encrypted message key is then hashed with SHA-1, and the hash is signed with ECDSA using the sending device’s private signing key. The resulting messages, one for each receiving device, consist of the encrypted message text, the encrypted message key, and the sender’s digital signature. They are then dispatched to the APNs for delivery. Metadata, such as the timestamp and APNs routing information, isn’t encrypted. Communication with APNs is encrypted using a forward-secret TLS channel.
 
 
-말이 긴데 요약하자면, 결국 암호화를 위한 RSA키와 서명용(무결성 및 부인방지용) ECDSA를 활용하여 iMessage를 구현했고 이를 통해 End-to-end security를 보장한다는 점이다. 메타데이터와 관련한 통신은 forward-secrecy를 보장하는 TLS(아마 DH계열이겠지)를 사용한다는 내용이다.
+말이 긴데 요약하자면, 결국 암호화를 위한 `RSA`키와 서명용(무결성 및 부인방지용) `ECDSA`를 활용하여 iMessage를 구현했고 이를 통해 End-to-end security를 보장한다는 점이다. 메타데이터와 관련한 통신은 `forward-secrecy`를 보장하는 `TLS`(아마 DH계열이겠지)를 사용한다는 내용이다.
 
 결국 강력한 하드웨어 에코시스템을 기반으로 속도와 성능의 고민없이 정답같은, 교과서같은 보안기능을 구현했다는 것으로 나는 이해하고 있다. (물론 다른 것들이 나쁘다는 것은 아니다. 이런 방식도 취약점을 가질 수 있다. [애플 아이메시지 암호화 제로데이 취약점.](https://www.hackerslab.org/news/imessage-vul/))
 
-[출처 - iOS security Sep. 2018](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf)
+[출처 - iOS security Sep. 2018, apple](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf)
 
 ### iMessage의 편의성
 
 내가 지금 맥북, 아이패드(WIFI모델), 아이폰을 사용하는데. 놀라운 건 아이클라우드를 기반으로 USIM이 없는 아이패드/맥북에서도 SMS/MMS를 보낼 수 있다는 것이다. ~~졸라 편하다;;~~
 
-[설정방법](https://support.apple.com/ko-kr/HT202549)
+[설정방법 - apple 홈페이지](https://support.apple.com/ko-kr/HT202549)
 
 부수적으로 뭐 애니모티콘, Digital touch 등의 소소한 재미를 주는 기능들도 애플의 환경에서만 느낄 수 있는 재미인 듯 하다.
 
@@ -77,7 +77,7 @@ When a user enables AirDrop, a 2048-bit RSA identity is stored on the device. Ad
 When a user chooses AirDrop as the method for sharing an item, the device emits an AirDrop signal over Bluetooth Low Energy. Other devices that are awake, in close proximity, and have AirDrop turned on detect the signal and respond with a shortened version of their owner’s identity hash.  
 
 
-결국 이것도 통제된 범위의 강력한 하드웨어를 가지고 있기 때문에 가능한 기능으로써, 기기 안에 암호키를 활용하여 identity를 확보하고, BLE를 통해 probing을 한다는 것으로 요약할 수 있지 싶다.
+결국 이것도 통제된 범위의 강력한 하드웨어를 가지고 있기 때문에 가능한 기능으로써, 기기 안에 암호키를 활용하여 identity를 확보하고, `BLE`를 통해 probing을 한다는 것으로 요약할 수 있지 싶다.
 
 ### Airdrop의 편의성
 
@@ -94,13 +94,13 @@ IoT가 주목받으면서 모두가 개방성을 외치고 시장선점을 위�
 
 정확한 프로세스와 요구사항을 파악하기는 어려운데, 이유는 돈 내야지만 NDA를 맺고 그 과정이 공개되는 것으로 보이기 때문이다.
 
-다만 BLE등 일부 기능을 제외하고 라이트닝 케이블부터 iphone, ipad 등과 연동하기 위한 하나의 프로세스와 애플의 요구사항을 정리하는 프레임워크로써 하드웨어부터 요구사항이 굉장히 높고 복잡함을 짐작할 수 있다.
+다만 `BLE`등 일부 기능을 제외하고 라이트닝 케이블부터 iphone, ipad 등과 연동하기 위한 하나의 프로세스와 애플의 요구사항을 정리하는 프레임워크로써 하드웨어부터 요구사항이 굉장히 높고 복잡함을 짐작할 수 있다.
 
 >
 Apple requires all manufacturers of HomeKit products to be certified through the Made for iPhone/iPod/iPad (MFi) program. To become certified, manufacturers must install an authentication chip in the accessory and pass extensive tests con-ducted by Apple. To pass these tests, manufacturers must send prototypes to Apple’s headquarters where the products can be tested by Apple personnel [38].
 
 [출처 - Comparison of IoT frameworks for the smart
-home](http://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8884481&fileOId=8884870)
+home,Alexander Larsson, 2016 ](https://www.eit.lth.se/sprapport.php?uid=977)
 
 인증칩을 별도로 구성하는 것은 기본이고 하드웨어에 대한 명세까지 요구하는 것으로 알고 있다.  ~~깡패지 뭐..~~
 
@@ -110,7 +110,7 @@ home](http://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8884481&fil
 
 ### iCloud의 보안성
 
-iCloud는 거의 애플 단말의 핵심 백엔드 플랫폼으로 동작한다고 여겨진다. 처음 아이폰 6를 쓰던 중에 맥북을 하나 받았는데, 설정과정에서 Key chain 을 바바박 나눠가지면서 예전 단말의 암호키 값 등을 그대로 복원해내는 과정은 아직도 기억에 남아있다.
+iCloud는 거의 애플 단말의 핵심 백엔드 플랫폼으로 동작한다고 여겨진다. 처음 아이폰 6를 쓰던 중에 맥북을 하나 받았는데, 설정과정에서 `Keychain` 을 바바박 나눠가지면서 예전 단말의 암호키 값 등을 그대로 복원해내는 과정은 아직도 기억에 남아있다.
 
  ![그림135]({{ site.baseurl }}/images/tech/ios/135.png)
 
@@ -121,7 +121,7 @@ Each file is broken into chunks and encrypted by iCloud using AES-128 and a key 
 ...
 Cloud Drive adds account-based keys to protect documents stored in iCloud. As with existing iCloud services, it chunks and encrypts file contents and stores the encrypted chunks using third-party services. However, the file content keys are wrapped by record keys stored with the iCloud Drive metadata. These record keys are in turn protected by the user’s iCloud Drive Service Key, which is then stored with the user’s iCloud account. Users get access to their iCloud  documents’ metadata by having authenticated with iCloud, but must also possess the iCloud Drive Service Key to expose protected parts of iCloud Drive storage
 
-이것도 복잡해보이지만. 일단 기본적으로 파일값에 의존적인 키로 일단 암호화를 하고, 사용자의 계정에 의존적인 키로 다시 덮어서 암호화를 한다는 뜻이다. ~~이렇게까지 해도 성능이 나오나;;~~
+이것도 복잡해보이지만. 일단 기본적으로 파일값에 의존적인 키로 일단 암호화를 하고, 사용자의 계정에 의존적인 키로 다시 덮어서 암호화를 한다는 뜻이다. ~~이렇게까지 해도 그런 성능이 나오다니;; 조금 느리더라도 이해하겠습니다;;~~
 
 
 위에서 이야기한 키체인 뿐 아니라, 애플의 보안기능과 관련된 대부분의 핵심 컴포넌트는 iCloud에서 이루어지는 것으로 보인다. **즉, 단말은 안전하게 자신의 식별값을 가지고 있고, 그 믿음을 바탕으로 iCloud가 모든 서비스를 적절하게 제공하는** 모양새라고 보면 된다.
@@ -138,12 +138,12 @@ iCloud 기반의 다양한 서비스가 있지만, 내가 눈여겨 본 것은 �
 
 안드로이드와 아이폰의 보안성을 비교하는 것은 매우 해묵은 논쟁이지만 쉽게 결론이 나지 않는 부분이기도 하다. 다만, 어느 관점으로 보느냐에 따라서 달리 볼 수도 있을 것 같은데.
 
-사견으로.
-보안이 관리의 영역이라는 점에서, 수많은 제조사/layer(SOC부터 3rd party application 까지 구글은 전부 제각각이며 이러한 문제는 예전부터 제기되었다. [PatchDroid: scalable third-party security patches for Android devices](https://dl.acm.org/citation.cfm?id=2523679))
+**사견으로.**
+보안이 관리의 영역이라는 점에서, 수많은 제조사/system layer(SOC부터 3rd party application 까지 구글은 전부 제각각이며 이러한 문제는 예전부터 제기되었다. [PatchDroid: scalable third-party security patches for Android devices, 	Collin Mulliner, 2013](https://dl.acm.org/citation.cfm?id=2523679))
 
-개방성을 표방하던 안드로이드였기 때문에 불가피했다고 본다. 실제로 구글은 안드로이드를 처음 만들 때, 레퍼런스 폰의 제조사, 칩셋벤더 등을 매번 바꾸려고 했었다. 그런데 지금은 자체적으로 픽셀폰을 만드는 것 뿐 아니라, 안드로이드의 다양한 기능들이 구글의 영향력 아래로 들어가고 있는 예제는 쉽게 찾아볼 수 있을 듯 하다.
+개방성을 표방하던 안드로이드였기 때문에 불가피했다고 본다. 즉, 철학의 차이였다고 생각한다. 실제로 구글은 안드로이드를 처음 만들 때, 레퍼런스 폰의 제조사, 칩셋벤더 등을 매번 바꾸려고 했었다. 그런데 지금은 자체적으로 픽셀폰을 만드는 것 뿐 아니라, 안드로이드의 다양한 기능들이 구글의 영향력 아래로 들어가고 있는 예제는 쉽게 찾아볼 수 있을 듯 하다.
 
-어쨌든. 그러한 영향력을 점점 키워가면서 구글은 안드로이드를 점점 안전하게 만들어가고 있고, 삼성전자 같은 대형 제조사는 KNOX 등의 보안 플랫폼을 활용하여 이를 극대화하고 있지만. 역시 안드로이드 vs 아이폰의 보안성을 비교하자면 두 가지 이유로 아이폰에 점수를 주고 싶다.
+어쨌든. 그러한 영향력을 점점 키워가면서 구글은 안드로이드를 점점 안전하게 만들어가고 있고, 삼성전자 같은 대형 제조사는 KNOX 등의 보안 플랫폼을 활용하여 이를 극대화하고 있지만. 역시 안드로이드 vs 아이폰의 보안성을 비교하자면 세 가지 이유로 아이폰에 점수를 주고 싶다.
 
  1) 관리영역의 명확성
  2) 편이성
@@ -151,9 +151,9 @@ iCloud 기반의 다양한 서비스가 있지만, 내가 눈여겨 본 것은 �
 
 특히 2번의 경우는 "이것저것 설정에 사용자의 개입이 많아야 하는 안드로이드 대비" "그냥 알아서 잘 지켜줄테니 너는 그냥 편하게 써" 라는 아이폰의 모양새에서 점수를 주고 싶고.
 
-3번은 독일의 Douglas schumidt 교수가 "구글이 얼마나 데이터를 막 가져가나" 하고 연구한 결과인데, 여기서 구글은 나한테 점수 많이 깎였다. [출처 - Google data collection research](https://digitalcontentnext.org/blog/2018/08/21/google-data-collection-research/)
+3번은 독일의 Douglas schumidt 교수가 "구글이 얼마나 데이터를 막 가져가나" 하고 연구한 결과인데, 여기서 구글은 나한테 점수 많이 깎였다. [출처 - Google data collection research, Douglas schumidt, 2018](https://digitalcontentnext.org/blog/2018/08/21/google-data-collection-research/)
 
-요약하자면 안드로이드 폰 기준으로 24시간 중에 위치정보를 340회 구글서버로 전송하고, 애플 기기 대비 10배의 통신을 자주하며 이는 특히 구글 플랫폼(안드로이드와 크롬)에서 매우 빈번하게 이루어진다는 점이다. 같은 앱인데도 iOS 기기에 설치된 구글 서비스는 횟수가 확 줄어든다고 한다.
+요약하자면 안드로이드 폰 기준으로 **24시간 중에 개인정보를 340회 구글 서버로 전송하고, 그 중에 35%는 위치정보를 포함하고 있으며, 애플 기기 대비 10배의 통신을 자주하며, 이는 특히 구글 플랫폼(안드로이드와 크롬)에서 매우 빈번하게 이루어진다** 는 점이다. 같은 앱인데도 iOS 기기에 설치된 구글 서비스는 횟수가 확 줄어든다고 한다.
 
 ~~기분나빠...~~
 
@@ -206,3 +206,6 @@ iCloud 기반의 다양한 서비스가 있지만, 내가 눈여겨 본 것은 �
 블루투스 이어폰을 사용하다 보면 알게되는 미묘한 딜레이타임이 있는데, 애플은 그걸 잡은 걸로 보인다. 단순 비교치로 보면 삼성 기어X가 3배의 딜레이타임이 있다.
 
 **본질에 충실하면서도 서비스에 필요한 모든 것을 고려하여 단순한 기능을 서비스 차원으로 격상시키는 것**. 이게 얼마나 어려운 일인지는 왠만한 사람들은 다 알 것이다. 특히 IT업계에 있다면..
+
+## 다시 한번.
+이 글은 애플 기기를 찬양하기 위한 글이 절대 아니다...
