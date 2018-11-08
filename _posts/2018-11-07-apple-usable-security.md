@@ -15,9 +15,10 @@ categories: Tech
  * 첫 번째 사진에서는 자물쇠가 있고, 푸시 내용이 안 보이고
  * 두 번째 사진에서는 자물쇠가 풀렸고, 푸시 내용이 보인다
 
-아이폰 X 이후로 적용된 얼굴인식 기능이 유일한 생체인증 기능으로 통합되었고, 자물쇠는 바로 그 인증을 통과했는지 안했는지 여부이다. 즉, 정당한 사용자를 인식할 때에는 푸시 내용이 보이고 그렇지 않을 때에는 푸시 내용을 가리며 참고로 얼굴인식이 성공했다 하더라도 다시 화면을 껐다가 다시 켜면 보였던 푸시 내용이 안보인다.
+아이폰 X 이후로 적용된 얼굴인식 기능이 유일한 생체인증 기능으로 통합되었고, 자물쇠는 바로 그 인증을 통과했는지 안했는지 여부이다. 즉, 정당한 사용자를 인식할 때에는 푸시 내용이 보이고 그렇지 않을 때에는 푸시 내용을 가리며 **참고로 한번 얼굴인식이 성공했다 하더라도 잠시 화면을 껐다가 다시 켜면 보였던 푸시 내용이 안보인다.**
 
 그에 반해 같은 기능을 안드로이드는 아래와 같이 적용하고 있다.
+~~이 메뉴가 어디 있는지 아는 사람도 별로 없을꺼다..~~
 
 ![그림3]({{ site.baseurl }}/images/tech/ios/33.png)
 
@@ -27,9 +28,9 @@ categories: Tech
 
 Mark dowd의 The are of security assessment 에서 분류하는 취약점 분류 상, operational vulnerability는 모두 저 지점에서 발생한다. 그리고 그러한 취약점은 특성 상 매우 간단하면서도 impact는 매우 큰 취약점들이다.
 
-나는 이런 게 극도로 싫다. 보안전문가들이 해줘야 하는 일은 전체를 바라보며 최종적으로 판단을 하고, 결정을 해주는 일이어야 한다. "모든 침해위협을 다 탐지한다!"는 게 무슨 소용인가? 사람이 하루에 백만개씩 오탐을 걸러내야 한다면..
+나는 이런 게 극도로 싫다. **보안전문가들이 해줘야 하는 일은 현재 가진 (보안)문제점에 대해서 전체를 바라보면서 최종적으로 판단을 하고, 결정을 해주는 일** 이어야 한다고 믿는다. "모든 침해위협을 다 탐지한다!"는 게 무슨 소용인가? 사람이 하루에 백만개씩 오탐을 걸러내야 한다면.. 그렇다면 거기서 무엇을 어떻게 판단하고 결정해야만 하는 것인가? 이것이 보안 담당자들이 해줘야 하는 일이라고 생각한다.
 
-이러한 설계 레벨에서의 선택과 결정이 UX를 포함한 서비스(Not 시스템)의 보안에 한 축이 되어야 한다고 생각한다.
+그리고 이러한 설계 레벨에서의 선택과 결정이 UX를 포함한 서비스(Not 시스템)의 보안에 한 축이 되어야 한다고 생각한다.
 
 ## iMessage
 
@@ -39,18 +40,20 @@ imessage는 문자앱인데. 처음에는 일반적인 간단한 기능이라고
 
 [관련 뉴스 - 미국 마약단속국 애플 아이메시지 해킹 불가능](http://www.dt.co.kr/contents.html?article_no=2013041102019960718001)
 
-일반적인 TLS와는 달리 종단간 암호화를 지원하는데, 일반적으로 [텔레그램](https://core.telegram.org/api/end-to-end)이나 카카오톡에서 제공하는 방법은 주로 DH(Diffie Hellman) 기반의 프로토콜을 응용하는 반면에, iMessage는 전화번호 등의 apple ID를 기반으로 PKI와 동일한 수준의 인프라를 구축하여 root of trust 에서 키를 관리하도록 되어 있다. ~~하드웨어를 가지고 있다는 건 이런 게 강점이다;;~~
+일반적인 TLS와는 달리 종단간 암호화를 지원하는데, **일반적으로 [텔레그램](https://core.telegram.org/api/end-to-end)이나 카카오톡에서 제공하는 방법은 주로 DH(Diffie Hellman) 기반의 프로토콜을 응용하는 반면에, iMessage는 전화번호 등의 apple ID를 기반으로 PKI와 동일한 수준의 인프라를 구축하여 하드웨어 기반의 root of trust 에서 키를 관리** 하도록 되어 있다. ~~하드웨어를 가지고 있다는 건 이런 게 강점이다;;~~
 
 관련한 내용은 내가 존경하는 [박세준 대표의 블로그](https://www.bpak.org/blog/2014/10/%ea%b7%b8%ea%b2%83%ec%9d%b4-%ec%95%8c%ea%b3%a0%ec%8b%b6%eb%8b%a4-e2e-pfs/) 를 보면 더욱 자세히 알 수 있다.
 
 ![그림1]({{ site.baseurl }}/images/tech/ios/1.png)
 
-```
-The user’s outgoing message is individually encrypted for each of the receiver’s devices. The public RSA encryption keys of the receiving devices are retrieved from IDS. For each receiving device, the sending device generates a random 88-bit value and uses it as an HMAC-SHA256 key to construct a 40-bit value derived from the sender and receiver public key and the plaintext. The concatenation of the 88-bit and 40-bit values makes a 128-bit key, which encrypts the message with it using AES in CTR mode. The 40-bit value is used by the receiver side to verify the integrity of the decrypted plaintext.
-This per-message AES key is encrypted using RSA-OAEP to the public key of the receiving device. The combination of the encrypted message text and the encrypted message key is then hashed with SHA-1, and the hash is signed with ECDSA using the sending device’s private signing key. The resulting messages, one for each receiving device, consist of the encrypted message text, the encrypted message key, and the sender’s digital signature. They are then dispatched to the APNs for delivery. Metadata, such as the timestamp and APNs routing information, isn’t encrypted. Communication with APNs is encrypted using a forward-secret TLS channel.
-```
 
-말이 긴데 요약하자면, 결국 암호화를 위한 RSA키와 서명용(무결성 및 부인방지용) ECDSA를 활용하여 iMessage를 구현했고 이를 통해 End-to-end security를 보장한다는 점이다. 메타데이터와 관련한 통신은 forward-secrecy를 보장하는 TLS(아마 DH계열이겠지)를 사용한다는 것이다.
+> The user’s outgoing message is individually encrypted for each of the receiver’s devices. The public RSA encryption keys of the receiving devices are retrieved from IDS. For each receiving device, the sending device generates a random 88-bit value and uses it as an HMAC-SHA256 key to construct a 40-bit value derived from the sender and receiver public key and the plaintext. The concatenation of the 88-bit and 40-bit values makes a 128-bit key, which encrypts the message with it using AES in CTR mode. The 40-bit value is used by the receiver side to verify the integrity of the decrypted plaintext.
+This per-message AES key is encrypted using RSA-OAEP to the public key of the receiving device. The combination of the encrypted message text and the encrypted message key is then hashed with SHA-1, and the hash is signed with ECDSA using the sending device’s private signing key. The resulting messages, one for each receiving device, consist of the encrypted message text, the encrypted message key, and the sender’s digital signature. They are then dispatched to the APNs for delivery. Metadata, such as the timestamp and APNs routing information, isn’t encrypted. Communication with APNs is encrypted using a forward-secret TLS channel.
+
+
+말이 긴데 요약하자면, 결국 암호화를 위한 RSA키와 서명용(무결성 및 부인방지용) ECDSA를 활용하여 iMessage를 구현했고 이를 통해 End-to-end security를 보장한다는 점이다. 메타데이터와 관련한 통신은 forward-secrecy를 보장하는 TLS(아마 DH계열이겠지)를 사용한다는 내용이다.
+
+결국 강력한 하드웨어 에코시스템을 기반으로 속도와 성능의 고민없이 정답같은, 교과서같은 보안기능을 구현했다는 것으로 나는 이해하고 있다. (물론 다른 것들이 나쁘다는 것은 아니다. 이런 방식도 취약점을 가질 수 있다. [애플 아이메시지 암호화 제로데이 취약점.](https://www.hackerslab.org/news/imessage-vul/))
 
 [출처 - iOS security Sep. 2018](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf)
 
@@ -69,28 +72,49 @@ This per-message AES key is encrypted using RSA-OAEP to the public key of the re
 
 역시 이것도 공개키 등을 기반으로 하는 구현이 잘 되어 있다. 아래 설명에 잘 드러난다.
 
-```
-When a user enables AirDrop, a 2048-bit RSA identity is stored on the device.
-Additionally, an AirDrop identity hash is created based on the email addresses and phone numbers associated with the user’s Apple ID.
+>
+When a user enables AirDrop, a 2048-bit RSA identity is stored on the device. Additionally, an AirDrop identity hash is created based on the email addresses and phone numbers associated with the user’s Apple ID.
 When a user chooses AirDrop as the method for sharing an item, the device emits an AirDrop signal over Bluetooth Low Energy. Other devices that are awake, in close proximity, and have AirDrop turned on detect the signal and respond with a shortened version of their owner’s identity hash.  
-```
+
 
 결국 이것도 통제된 범위의 강력한 하드웨어를 가지고 있기 때문에 가능한 기능으로써, 기기 안에 암호키를 활용하여 identity를 확보하고, BLE를 통해 probing을 한다는 것으로 요약할 수 있지 싶다.
 
 ### Airdrop의 편의성
 
-애플 제품에 한한다고 하지만. 이렇게 편하고 빠르고 쉬운 file sharing 기능을 본 적이 없다. 
+애플 제품에 한한다고 하지만. 이렇게 편하고 빠르고 쉬운 file sharing 기능을 본 적이 없다.
+
+![그림4]({{ site.baseurl }}/images/tech/ios/44.gif)
+
+~~이보다 쉽고 편할 수가 있을까..ㅋ~~
 
 
 ### MFi (Made for iOS)
 
-..to be contibue.. 이건 자료가 많이 없음..
+IoT가 주목받으면서 모두가 개방성을 외치고 시장선점을 위해 이런저런 플랫폼들이 개발되고 있을 때 apple은 MFi 를 제시했다. 이게 하나의 프로그램인데.. 사실 굉장히 인상적인 부분은 애플의 색깔이 너무 잘 드러난다는 점.
+
+정확한 프로세스와 요구사항을 파악하기는 어려운데, 이유는 돈 내야지만 NDA를 맺고 그 과정이 공개되는 것으로 보이기 때문이다.
+
+다만 BLE등 일부 기능을 제외하고 라이트닝 케이블부터 iphone, ipad 등과 연동하기 위한 하나의 프로세스와 애플의 요구사항을 정리하는 프레임워크로써 하드웨어부터 요구사항이 굉장히 높고 복잡함을 짐작할 수 있다.
+
+>
+Apple requires all manufacturers of HomeKit products to be certified through the Made for iPhone/iPod/iPad (MFi) program. To become certified, manufacturers must install an authentication chip in the accessory and pass extensive tests con-ducted by Apple. To pass these tests, manufacturers must send prototypes to Apple’s headquarters where the products can be tested by Apple personnel [38].
+
+[출처 - Comparison of IoT frameworks for the smart
+home](http://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8884481&fileOId=8884870)
+
+인증칩을 별도로 구성하는 것은 기본이고 하드웨어에 대한 명세까지 요구하는 것으로 알고 있다.  ~~깡패지 뭐..~~
+
+사실 IoT 사업에 대해서 어느 정도 알고 있는 사람들이라면, 저게 얼마나 많은 단가상승과 개발복잡도를 가져오는지 대충 짐작할 수 있을 듯 하다.
 
 ### iCloud
 
 ### iCloud의 보안성
 
 ### iCloud의 편의성
+
+### 삼성 KNOX 의 보안
+
+
 
 ### 느낀 점 시사점
 
