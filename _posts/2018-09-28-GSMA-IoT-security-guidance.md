@@ -4,6 +4,13 @@ title: GSMA IoT security guidance & assessment
 categories: Tech
 ---
 
+```
+* status update: 2019.02.08. GSMA IoT security champion award 수상
+* Official invitation
+![Official Invitation]({{ site.baseurl }}/images/tech/gsma/GSMA-invitation.jpg)
+```
+
+
 또 오랜만에 글 쓰는 것 같다. 이렇게 한번 글 쓰기가 어려운 이유는, 늘 두 가지가 복합적이다. 1) 공부를 안하고 있다 2) 공부를 해도 글로 남기기가 귀찮다.
 
 그냥 부담갖지 말고, 가볍게 정리해놓는 목적을 잊지 말자.
